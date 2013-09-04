@@ -110,6 +110,9 @@ a:focus {
 	color: #ccc;
 	font-size: 80%;
 }
+.bottom {
+	font-size: 80%;
+}
 
 .footer .pure-menu a:hover,
 .footer .pure-menu a:focus {
@@ -165,10 +168,33 @@ legend{
 	background: #220322;
 	color: #fff;
 }
-.success {
-	color: #1F8DD6;
+.error {
+	color: red;
 	font-style: italic;
 }
 li.dark a {
 	color: #7e0b80;
+}
+
+/*********************
+	=scroll
+*********************/	
+.scrollup {
+	width: 40px;
+	height: 40px;
+	opacity: 0.5;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	display: none;
+	text-indent: -9999px;
+	background: url('../img/top.png') no-repeat;
+}
+/*********************
+	=about
+*********************/	
+.article {
+	background: #eee;
+	padding: 20px;
+	border-radius: 10px;
 }
