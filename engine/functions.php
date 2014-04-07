@@ -1,12 +1,15 @@
 <?php //namespace Blog\DB;
 
-require 'config.php';
+$config = array(
+		'username' => 'root',
+		'password' => 'database password'
+	);
 
 // This function will connect to database
 function connect($config) {
 
 	try{
-		$conn = new PDO('mysql:host=blogpost.mysql.eu1.frbit.com;dbname=blogpost',
+		$conn = new PDO('mysql:host=localhost;dbname=blogpost',
 						$config['username'],
 						$config['password']);
 
