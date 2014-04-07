@@ -1,15 +1,12 @@
 <?php //namespace Blog\DB;
 
-$config = array(
-		'username' => 'root',
-		'password' => 'admin'
-	);
+require 'config.php';
 
 // This function will connect to database
 function connect($config) {
 
 	try{
-		$conn = new PDO('mysql:host=localhost;dbname=blog',
+		$conn = new PDO('mysql:host=blogpost.mysql.eu1.frbit.com;dbname=blogpost',
 						$config['username'],
 						$config['password']);
 
@@ -30,7 +27,7 @@ function connect($config) {
 */
 function get($tableName, $conn) {
 	try{
-		$results = $conn->query("SELECT * FROM $tableName ORDER BY id DESC");	
+		$results = $conn->query("SELECT id, title, name, email, category,created_at, LEFT(body, 330) as body FROM $tableName ORDER BY id DESC");	
 
 		return ( $results->rowCount() > 0 )
 			? $results
@@ -59,12 +56,17 @@ function get_by_id($id, $conn) {
 	if( $query ) return $query->fetchAll();
 }
 
+
 // resusable function for header
 function head($title) {
-echo "	
-	<title>Blog | $title</title>
-		<meta charset=\"utf-8\"/>
-		<link rel=\"stylesheet\" href=\"http://yui.yahooapis.com/pure/0.2.1/pure-min.css\">
-		<link rel=\"stylesheet\" href=\"css/custom.css\">
-	";	
+	return "
+			<title>Blog | $title</title>
+			<link rel='stylesheet' href='http://yui.yahooapis.com/pure/0.4.2/pure-min.css'>
+			<link rel='stylesheet' href='css/main-grid.css'>
+			<link rel='stylesheet' href='css/custom.css'>
+			";	
+}
+ // Checks weather user is login or not.
+function is_logged_in() {
+	return isset($_SESSION['username']);
 }
