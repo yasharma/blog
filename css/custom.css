@@ -11,31 +11,37 @@ a:hover,
 a:focus {
 	text-decoration: underline;
 }
-
 /*********************
 	=layout css
 *********************/	
 #layout {
-	padding-left: 25%;
-	position: relative;
+	padding: 0;
 }
 .sidebar {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	width: 25%;
-	margin-left: -25%;
 	background: #220322;
 	color: #f7f7f7;
 }
 .header {
-	margin: 50% 2em 0;
-	text-align: right;
+	text-align: center;
+	top: auto;
+	margin: 3em auto;
+}
+.brand-title,
+.brand-tagline {
+    margin: 0;
 }
 .brand-title {
 	text-transform: uppercase;
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-family: 'Carrois Gothic', sans-serif;
 	font-weight: normal;
+	text-decoration: none;
+}
+.brand-title a{
+	color: #fff;
+}
+.brand-title a:hover{
+	text-decoration: none;
+	color: #fff;
 }
 .brand-tagline {
 	font-weight: 300;
@@ -53,14 +59,16 @@ a:focus {
 }
 .nav-item a {
 	background: transparent;
-	border: 3px solid #5f0861;
+	border: 2px solid #5f0861;
 	color: #f7f7f7;
 	margin-top: 1em;
+	letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 85%;
 }
 .nav-item a:hover,
 .nav-item a:focus {
-	border: 3px solid #7e0b80;
-	color: #9d0e9f;
+	border: 2px solid #7e0b80;
 	text-decoration: none;
 }
 
@@ -76,7 +84,7 @@ a:focus {
 	letter-spacing: 0.1em;
 }
 
-.content { padding: 2em 3em 0; }
+.content { padding: 2em 1em 0; }
 
 .post { padding-bottom: 2em; }
 
@@ -84,14 +92,17 @@ a:focus {
 	font-size: 2em;
 	color: #222;
 	margin-bottom: 0.2em;
+	font-family: 'Carrois Gothic', sans-serif;
 }
-
+.post-title a{
+	text-decoration: none;
+	color: #222;
+	text-transform: capitalize;
+}
 .post-description {
 	font-family:  Georgia, "cambria", serif;
 	color: #444;
 	line-height: 1.8em;
-	padding-top: 20px;
-	padding-bottom: 20px;
 }
 
 .post-meta {
@@ -100,6 +111,16 @@ a:focus {
 	margin: 0;
 }
 
+.post-category{
+	margin: 0 0.1em;
+	padding: 0.3em 1em;
+	color: #fff;
+	background: #999;
+	font-size: 80%;
+}
+.post-category-pure {
+        background: #772277;
+    }
 /* Footer */
 .footer{
 	text-align: center;
@@ -107,11 +128,11 @@ a:focus {
 }
 
 .footer a {
-	color: #ccc;
+	color: #555;
 	font-size: 80%;
 }
 .bottom {
-	font-size: 80%;
+	font-size: 1em;
 }
 
 .footer .pure-menu a:hover,
@@ -119,28 +140,21 @@ a:focus {
     background: none;
 }
 
-@media (max-width: 767px) {
-    .sidebar {
-        width: 100%;
-        position: relative;
-        margin: 0;
+@media (min-width: 48em) {
+    .content {
+        padding: 2em 3em 0;
+        margin-left: 25%;
     }
 
     .header {
-        text-align: center;
-        top: auto;
-        margin: 3em auto;
-        position: static;
+        margin: 80% 2em 0;
+        text-align: right;
     }
 
-    #layout {
-        padding: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .content {
-        padding: 2em 1em 0;
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
     }
 }
 
@@ -153,27 +167,29 @@ a:focus {
 	margin-top: 30px;
 }
 .pure-form input[type="text"],
+.pure-form input[type="email"],
+.pure-form input[type="password"],
 .pure-form textarea {
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
+	width: 100%;
 }
 textarea {
 	height: 300px;
 }
 legend{
 	text-align: center;
-	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	font-family: "Century Gothic" sans-serif;
 	font-weight: bold;
 }
 .pure-form button[type="submit"] {
 	background: #220322;
 	color: #fff;
+	margin-top: 5px;
 }
 .error {
-	color: red;
+	color: #5f0861;
 	font-style: italic;
-}
-li.dark a {
-	color: #7e0b80;
+	font-weight: bold;
 }
 
 /*********************
