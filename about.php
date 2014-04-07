@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
   	<head>
-		<?php head('about') ?>
+		<?= head('about') ?>
 	</head>
 <body>
 	<div class="container">
@@ -10,12 +10,13 @@
 		<article class="article">
 			Blog is a simple blog post web application.
 			created with php and <a href="http://purecss.io">pure framework</a>.
-			Their you can create your own blog post,
-			that will display on blog homepage.code licensed under the <a href="#">Apache License v2.0</a>.
+			Their you can read posts of different categories like php,css,html,java and so on...
+			This is a personal blog site only admin can post into the blog.
+			code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a>.
 			
-			<!--address>
-				<strong>Created By: </strong><a href="mailto:yashsharma205@gmail.com">yash sharma</a>
-			</address-->	
+			<address>
+				<strong>Created By: </strong><a href="mailto:yasharma@live.com">yash sharma</a>
+			</address>	
 		</article>
 		<footer class="footer">
 			<div class="pure-menu pure-menu-horizontal pure-menu-open">
