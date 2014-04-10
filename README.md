@@ -1,4 +1,4 @@
-blogPost
+BLOGPOST
 ====
 
 <a href="http://blogpost.eu1.frbit.net/">Blogpost.eu1.frbit.net</a> is a simple blogposting site.
