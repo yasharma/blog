@@ -11,6 +11,12 @@ a:hover,
 a:focus {
 	text-decoration: underline;
 }
+.brand-title,
+.post-title,
+.pure-form legend,
+.pure-table caption{
+	font-family: 'Carrois Gothic', sans-serif;
+}
 /*********************
 	=layout css
 *********************/	
@@ -32,7 +38,6 @@ a:focus {
 }
 .brand-title {
 	text-transform: uppercase;
-	font-family: 'Carrois Gothic', sans-serif;
 	font-weight: normal;
 	text-decoration: none;
 }
@@ -89,10 +94,10 @@ a:focus {
 .post { padding-bottom: 2em; }
 
 .post-title {
-	font-size: 2em;
+	font-size: 1.8em;
 	color: #222;
 	margin-bottom: 0.2em;
-	font-family: 'Carrois Gothic', sans-serif;
+	text-transform: capitalize;
 }
 .post-title a{
 	text-decoration: none;
@@ -100,17 +105,19 @@ a:focus {
 	text-transform: capitalize;
 }
 .post-description {
-	font-family:  Georgia, "cambria", serif;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	color: #444;
 	line-height: 1.8em;
 }
-
+.
 .post-meta {
 	color: #999;
 	font-size: 90%;
 	margin: 0;
 }
-
+.post-meta a, .post-description a, .post-header a{
+	text-decoration: none;
+}
 .post-category{
 	margin: 0 0.1em;
 	padding: 0.3em 1em;
@@ -119,8 +126,9 @@ a:focus {
 	font-size: 80%;
 }
 .post-category-pure {
-        background: #772277;
-    }
+    background: #772277;
+}
+
 /* Footer */
 .footer{
 	text-align: center;
@@ -162,7 +170,7 @@ a:focus {
 	css for form
 *********************/	
 .container {
-	width: 600px;
+	width: 700px;
 	margin: auto;
 	margin-top: 30px;
 }
@@ -174,12 +182,12 @@ a:focus {
 	width: 100%;
 }
 textarea {
-	height: 300px;
+	height: 500px;
 }
-legend{
+.pure-form legend{
 	text-align: center;
-	font-family: "Century Gothic" sans-serif;
 	font-weight: bold;
+	font-size: 20px;
 }
 .pure-form button[type="submit"] {
 	background: #220322;
@@ -191,7 +199,14 @@ legend{
 	font-style: italic;
 	font-weight: bold;
 }
-
+.pure-form input[type="search"]{
+	background: #fff url('../img/find_magnifier_icon.png') no-repeat;
+	background-position: 5px 8px;
+	padding-left: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 370px;
+}
 /*********************
 	=scroll
 *********************/	
@@ -213,4 +228,26 @@ legend{
 	background: #eee;
 	padding: 20px;
 	border-radius: 10px;
+}
+/*Prettify css*/
+pre.prettyprint {
+	border-radius: 5px;
+  	font-family: Verdana, Geneva, sans-serif;
+}
+ol.linenums{
+	margin: 0;
+}
+/* Table */
+.pure-table caption{
+	font-size: 1.8em;
+	font-style: normal;
+}
+.pure-table{
+	width: 700px;
+	margin: auto;
+}
+.pure-table td, .pure-table th{
+	border-bottom: 1px solid #cbcbcb;
+	padding: 10px;
+	text-align: center;
 }
