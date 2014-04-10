@@ -4,7 +4,6 @@ require 'engine/connection.php';
 
 // Fetch Posts
 $posts = get('posts', $conn);
-
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -19,35 +18,11 @@ $posts = get('posts', $conn);
 
 		
 			<div class="content pure-u-1 pure-u-med-3-4">
+				<form action="search.php" class="pure-form" method="get">
+					<input type="search" name="title" placeholder="Search for posts" autocomplete="off">
+				</form>
 				<div>
-					<!-- A Wrapper for all blog posts -->
-					<div class="posts">
-						<h1 class="content-subhead">Recent Posts</h1>
-						<section class="post">
-							<header class="post-header">
-								<?php foreach($posts as $post) : ?>
-									<h2 class="post-title">
-										<a href="single.php?id=<?= $post['id']; ?>">
-											<?= $post['title']; ?>
-										</a>
-									</h2>
-									<p class="post-meta">By 
-										<a href="mailto: <?= $post['email']; ?>" class="post-author"> <?= $post['name']; ?> </a> on <?= $post['created_at']; ?>
-										<a href="category.php?category=<?= $post['category']; ?>" class="post-category post-category-pure"><?= $post['category']; ?></a>
-									</p>
-							</header>
-							<div class="post-description">
-								<?php 
-								$space = strrpos($post['body'], " ");
-								$part = substr($post['body'], 0, $space);
-								echo $part
-								?>
-								<p><a href="single.php?id=<?= $post['id']; ?>"> Read More...</a></p>
-								
-							</div>
-								<?php endforeach; ?>
-						</section>
-					</div><!-- End Posts -->
+					<?php include 'includes/content.php'; ?>
 				</div>	
 
 				<?php include 'includes/footer.inc.php'; ?>
@@ -55,9 +30,6 @@ $posts = get('posts', $conn);
 			</div><!-- End Content -->
 		</div><!-- End pure-u-1-->	
 	</div><!-- End pure-g-r -->
-
-	<!-- Javascript -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
 	<!-- Script for scroll -->
 	<script>
@@ -75,8 +47,9 @@ $posts = get('posts', $conn);
 	            $("html, body").animate({ scrollTop: 0 }, 600);
 	            return false;
 	        });
-	 
+	 		// prettyPrint();
 	    });
+
 	</script>
 </body>	
 </html>	
